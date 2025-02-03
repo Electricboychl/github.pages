@@ -30,6 +30,13 @@
             padding: 20px;
             margin: 15px 0;
             border-radius: 8px;
+            opacity: 0; /* Inicialmente oculto */
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         h2 {
             color: #4db8ff;
@@ -112,6 +119,24 @@
     <footer>
         <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, {
+                threshold: 0.2 // La sección aparece cuando el 20% de ella es visible
+            });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
 </html>
 
