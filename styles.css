@@ -63,17 +63,24 @@ body {
 /* Perfil */
 .profile {
   background-color: var(--card-bg);
-  padding: 30px; /* Aumentar el padding del perfil */
-  border-radius: 12px; /* Bordes más suaves */
-  text-align: center;
-  margin-bottom: 25px; /* Aumentar el espacio entre secciones */
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left; /* Alineación del texto a la izquierda */
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img-container {
+  margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
 .profile-img {
-  width: 250px; /* Aumentar tamaño de la imagen de perfil */
+  width: 150px; /* Tamaño de la imagen */
+  height: 150px; /* Tamaño de la imagen */
   border-radius: 50%;
   border: 3px solid var(--primary-color);
-  margin-bottom: 15px;
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
 }
 
 /* Secciones */
