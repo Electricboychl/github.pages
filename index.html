@@ -4,71 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Manuel Rojas Jaramillo</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e1e;
-            color: #ddd;
-        }
-        header {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1, header h2 {
-            margin: 5px 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            background-color: #222;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            opacity: 0; /* Inicialmente oculto */
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        h2 {
-            color: #4db8ff;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li::before {
-            content: "✔ ";
-            color: #4db8ff;
-        }
-        footer {
-            background-color: #111;
-            text-align: center;
-            padding: 10px;
-        }
-        a {
-            color: #4db8ff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .profile-img {
-            display: block;
-            margin: 0 auto 20px;
-            width: 150px;
-            border-radius: 50%;
-            border: 3px solid #4db8ff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -77,13 +13,13 @@
     </header>
 
     <div class="container">
-        <section>
+        <section class="hidden">
             <h2>Sobre mí</h2>
             <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
             <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas. Tengo experiencia en análisis de calidad y continuidad del suministro eléctrico, diseño de convertidores de potencia y análisis de datos con Python.</p>
         </section>
 
-        <section>
+        <section class="hidden">
             <h2>Educación</h2>
             <ul>
                 <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
@@ -91,7 +27,7 @@
             </ul>
         </section>
 
-        <section>
+        <section class="hidden">
             <h2>Habilidades</h2>
             <ul>
                 <li>MATLAB / Simulink / PLECS / Digsilent / PSCAD</li>
@@ -102,13 +38,13 @@
             </ul>
         </section>
 
-        <section>
+        <section class="hidden">
             <h2>Experiencia</h2>
             <p><strong>Práctica profesional - Transelec S.A. (Feb 2023 - Mar 2023)</strong></p>
             <p>Apoyo en la planificación y supervisión de mantenimiento correctivo y preventivo en líneas de alta tensión.</p>
         </section>
 
-        <section>
+        <section class="hidden">
             <h2>Contacto</h2>
             <p>Email: <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
             <p>Teléfono: +56989447418</p>
@@ -120,23 +56,7 @@
         <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
-                });
-            }, {
-                threshold: 0.2 // La sección aparece cuando el 20% de ella es visible
-            });
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 
