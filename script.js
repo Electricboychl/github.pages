@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Efecto parallax: mueve ligeramente el contenedor a medida que se hace scroll
   window.addEventListener('scroll', () => {
     let scrollPos = window.scrollY;
-    // El factor (0.1) determina la velocidad del efecto
+    // Factor para el efecto parallax
     document.querySelector('.container').style.transform = `translateY(${scrollPos * 0.1}px)`;
   });
 });
