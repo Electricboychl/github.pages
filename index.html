@@ -4,124 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Manuel Rojas Jaramillo</title>
-  <style>
-    :root {
-      --bg-color: #1e1e1e;
-      --text-color: #ddd;
-      --card-bg: #222;
-      --primary-color: #4db8ff;
-      --button-bg: #444;
-      --button-text: #fff;
-    }
-
-    body.light-mode {
-      --bg-color: #fff;
-      --text-color: #333;
-      --card-bg: #f4f4f4;
-      --button-bg: #ddd;
-      --button-text: #333;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 600px;
-      padding: 20px;
-    }
-
-    .profile {
-      background-color: var(--card-bg);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .profile-img {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    section {
-      background-color: var(--card-bg);
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-    }
-
-    h1, h2, h3 {
-      margin: 0.5em 0;
-    }
-
-    h2 {
-      color: var(--primary-color);
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "✔ ";
-      color: var(--primary-color);
-    }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: var(--card-bg);
-      margin-top: 20px;
-    }
-
-    /* Botón de cambio de tema */
-    #theme-toggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: var(--button-bg);
-      color: var(--button-text);
-      font-size: 1rem;
-      transition: background 0.3s ease;
-      z-index: 1000;
-    }
-
-    #theme-toggle:hover {
-      background-color: var(--primary-color);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button id="theme-toggle">Modo Claro/Oscuro</button>
+  <button id="theme-toggle">🌜 Modo Oscuro</button>
 
   <div class="container">
-    <!-- Sección de Perfil -->
     <div class="profile">
       <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
       <h1>José Manuel Rojas Jaramillo</h1>
@@ -132,7 +20,6 @@
       <p>Ubicación: Santiago - Talca, Chile</p>
     </div>
 
-    <!-- Secciones de Contenido -->
     <section>
       <h2>Sobre mí</h2>
       <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas.</p>
@@ -168,11 +55,10 @@
     <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
   </footer>
 
-  <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-    });
+  <script src="script.js"></script>
+</body>
+</html>
+
   </script>
 </body>
 </html>
