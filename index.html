@@ -1,182 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Manuel Rojas Jaramillo</title>
-    <style>
-        :root {
-            --bg-color: #1e1e1e;
-            --text-color: #ddd;
-            --card-bg: #222;
-            --primary-color: #4db8ff;
-            --button-bg: #444;
-            --button-text: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Manuel Rojas Jaramillo</title>
+  <style>
+    :root {
+      --bg-color: #1e1e1e;
+      --text-color: #ddd;
+      --card-bg: #222;
+      --primary-color: #4db8ff;
+      --button-bg: #444;
+      --button-text: #fff;
+    }
 
-        body.light-mode {
-            --bg-color: #fff;
-            --text-color: #333;
-            --card-bg: #f4f4f4;
-            --button-bg: #ddd;
-            --button-text: #333;
-        }
+    body.light-mode {
+      --bg-color: #fff;
+      --text-color: #333;
+      --card-bg: #f4f4f4;
+      --button-bg: #ddd;
+      --button-text: #333;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .container {
-            display: flex;
-            max-width: 1000px;
-            width: 90%;
-            gap: 20px;
-            padding: 20px;
-        }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+    }
 
-        .left-column {
-            width: 30%;
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
+    .profile {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        .profile-img {
-            width: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            margin-bottom: 15px;
-        }
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--primary-color);
+      margin-bottom: 15px;
+    }
 
-        .right-column {
-            width: 70%;
-        }
+    section {
+      background-color: var(--card-bg);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
 
-        section {
-            background-color: var(--card-bg);
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
+    h1, h2, h3 {
+      margin: 0.5em 0;
+    }
 
-        h2 {
-            color: var(--primary-color);
-        }
+    h2 {
+      color: var(--primary-color);
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        ul li::before {
-            content: "✔ ";
-            color: var(--primary-color);
-        }
+    ul li::before {
+      content: "✔ ";
+      color: var(--primary-color);
+    }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: var(--card-bg);
-            margin-top: 20px;
-        }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: var(--card-bg);
+      margin-top: 20px;
+    }
 
-        /* Botón de cambio de tema */
-        #theme-toggle {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            font-size: 1rem;
-            transition: background 0.3s ease;
-            z-index: 1000;
-        }
+    /* Botón de cambio de tema */
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
 
-        #theme-toggle:hover {
-            background-color: var(--primary-color);
-        }
-    </style>
+    #theme-toggle:hover {
+      background-color: var(--primary-color);
+    }
+  </style>
 </head>
 <body>
-    <button id="theme-toggle">Modo Claro/Oscuro</button>
+  <button id="theme-toggle">Modo Claro/Oscuro</button>
 
-    <div class="container">
-        <!-- Columna Izquierda -->
-        <div class="left-column">
-            <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
-            <h1>José Manuel Rojas Jaramillo</h1>
-            <h2>Ingeniero Civil Eléctrico</h2>
-            <h3>Magíster en Conversión de Energía</h3>
-            <p>Email: <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
-            <p>Teléfono: +56989447418</p>
-            <p>Ubicación: Santiago - Talca, Chile</p>
-        </div>
-
-        <!-- Columna Derecha -->
-        <div class="right-column">
-            <section>
-                <h2>Sobre mí</h2>
-                <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas.</p>
-            </section>
-
-            <section>
-                <h2>Educación</h2>
-                <ul>
-                    <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
-                    <li>Ingeniería Civil Eléctrica - Universidad de Talca (2018-2024)</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Habilidades</h2>
-                <ul>
-                    <li>MATLAB / Simulink / PLECS / Digsilent / PSCAD</li>
-                    <li>Python / SQL / C / C++ / JavaScript / PHP</li>
-                    <li>Diseño de convertidores de potencia</li>
-                    <li>Simulación de sistemas eléctricos</li>
-                    <li>Microcontroladores Texas Instruments</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Experiencia</h2>
-                <p><strong>Práctica profesional - Transelec S.A. (Feb 2023 - Mar 2023)</strong></p>
-                <p>Apoyo en la planificación y supervisión de mantenimiento correctivo y preventivo en líneas de alta tensión.</p>
-            </section>
-        </div>
+  <div class="container">
+    <!-- Sección de Perfil -->
+    <div class="profile">
+      <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
+      <h1>José Manuel Rojas Jaramillo</h1>
+      <h2>Ingeniero Civil Eléctrico</h2>
+      <h3>Magíster en Conversión de Energía</h3>
+      <p>Email: <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
+      <p>Teléfono: +56989447418</p>
+      <p>Ubicación: Santiago - Talca, Chile</p>
     </div>
 
-    <footer>
-        <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
-    </footer>
+    <!-- Secciones de Contenido -->
+    <section>
+      <h2>Sobre mí</h2>
+      <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas.</p>
+    </section>
 
-    <script>
-        const themeToggle = document.getElementById("theme-toggle");
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("light-mode");
-        });
-    </script>
+    <section>
+      <h2>Educación</h2>
+      <ul>
+        <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
+        <li>Ingeniería Civil Eléctrica - Universidad de Talca (2018-2024)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidades</h2>
+      <ul>
+        <li>MATLAB / Simulink / PLECS / Digsilent / PSCAD</li>
+        <li>Python / SQL / C / C++ / JavaScript / PHP</li>
+        <li>Diseño de convertidores de potencia</li>
+        <li>Simulación de sistemas eléctricos</li>
+        <li>Microcontroladores Texas Instruments</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+      <p><strong>Práctica profesional - Transelec S.A. (Feb 2023 - Mar 2023)</strong></p>
+      <p>Apoyo en la planificación y supervisión de mantenimiento correctivo y preventivo en líneas de alta tensión.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+    });
+  </script>
 </body>
 </html>
