@@ -4,36 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Manuel Rojas Jaramillo</title>
-  <!-- Agrega Font Awesome -->
+  <!-- Font Awesome para los íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Audio de fondo (puedes ocultar controles) -->
+  <!-- Audio de fondo -->
   <audio id="background-music" src="music.mp3" autoplay loop></audio>
 
+  <!-- Botón para cambiar de tema -->
   <button id="theme-toggle">🌜 Modo Oscuro</button>
 
+  <!-- Menú de navegación fijo en la parte superior -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#logros-academicos">Logros Académicos</a></li>
+      <li><a href="#trabajos-realizados">Trabajos Realizados</a></li>
+      <li><a href="#voluntariados">Voluntariados</a></li>
+      <li><a href="#contactos-referencia">Contactos de Referencia</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
-  <div class="profile">
-  <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
-  <h1>José Manuel Rojas Jaramillo</h1>
-  <h2>Ingeniero Civil Eléctrico</h2>
-  <h3>Magíster en Conversión de Energía</h3>
-  <p><i class="fa-solid fa-envelope"></i> <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
-  <p><i class="fa-solid fa-phone"></i> +56989447418</p>
-  <p><i class="fa-solid fa-location-dot"></i> Santiago - Talca, Chile</p>
-  <!-- Agregamos el enlace a LinkedIn -->
-  <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/joserojaschl" target="_blank">linkedin.com/in/joserojaschl</a></p>
-</div>
+    <!-- Sección de Perfil -->
+    <div class="profile">
+      <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
+      <h1>José Manuel Rojas Jaramillo</h1>
+      <h2>Ingeniero Civil Eléctrico</h2>
+      <h3>Magíster en Conversión de Energía</h3>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
+      <p><i class="fa-solid fa-phone"></i> +56989447418</p>
+      <p><i class="fa-solid fa-location-dot"></i> Santiago - Talca, Chile</p>
+      <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/joserojaschl" target="_blank">linkedin.com/in/joserojaschl</a></p>
+    </div>
 
-
-    <section>
+    <!-- Sección "Sobre mí" y Educación (ya existentes) -->
+    <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas.</p>
+      <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y en el desarrollo de algoritmos para la detección de fallas.</p>
     </section>
 
-    <section>
+    <section id="educacion">
       <h2>Educación</h2>
       <ul>
         <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
@@ -41,21 +52,28 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Habilidades</h2>
-      <ul>
-        <li>MATLAB / Simulink / PLECS / Digsilent / PSCAD</li>
-        <li>Python / SQL / C / C++ / JavaScript / PHP</li>
-        <li>Diseño de convertidores de potencia</li>
-        <li>Simulación de sistemas eléctricos</li>
-        <li>Microcontroladores Texas Instruments</li>
-      </ul>
+    <!-- Nueva Sección: Logros Académicos -->
+    <section id="logros-academicos">
+      <h2>Logros Académicos</h2>
+      <p>Aquí puedes listar premios, reconocimientos y otros hitos relevantes en el ámbito académico.</p>
     </section>
 
-    <section>
-      <h2>Experiencia</h2>
-      <p><strong>Práctica profesional - Transelec S.A. (Feb 2023 - Mar 2023)</strong></p>
-      <p>Apoyo en la planificación y supervisión de mantenimiento correctivo y preventivo en líneas de alta tensión.</p>
+    <!-- Nueva Sección: Trabajos Realizados -->
+    <section id="trabajos-realizados">
+      <h2>Trabajos Realizados</h2>
+      <p>Aquí puedes detallar proyectos, experiencia laboral y desarrollos destacados en tu carrera.</p>
+    </section>
+
+    <!-- Nueva Sección: Voluntariados -->
+    <section id="voluntariados">
+      <h2>Voluntariados</h2>
+      <p>Aquí puedes incluir las experiencias de voluntariado en las que has participado.</p>
+    </section>
+
+    <!-- Nueva Sección: Contactos de Referencia -->
+    <section id="contactos-referencia">
+      <h2>Contactos de Referencia</h2>
+      <p>Aquí puedes agregar nombres, cargos y datos de contacto de personas que puedan recomendarte.</p>
     </section>
   </div>
 
@@ -66,3 +84,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
