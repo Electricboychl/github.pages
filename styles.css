@@ -51,11 +51,11 @@ body {
   font-weight: bold;
 }
 
-/* Contenedor principal: se agrega margen superior para evitar superposición con el navbar */
+/* Contenedor principal */
 .container {
-  width: 90%;
-  max-width: 600px;
-  padding: 20px;
+  width: 80%; /* Reducir el margen para aumentar el tamaño del contenedor */
+  max-width: 800px; /* Aumentar el tamaño máximo */
+  padding: 30px; /* Aumentar el padding del contenedor */
   margin: 80px auto 0 auto;
   transition: transform 0.3s ease;
 }
@@ -63,14 +63,14 @@ body {
 /* Perfil */
 .profile {
   background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
+  padding: 30px; /* Aumentar el padding del perfil */
+  border-radius: 12px; /* Bordes más suaves */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Aumentar el espacio entre secciones */
 }
 
 .profile-img {
-  width: 200px; /* Tamaño incrementado */
+  width: 250px; /* Aumentar tamaño de la imagen de perfil */
   border-radius: 50%;
   border: 3px solid var(--primary-color);
   margin-bottom: 15px;
@@ -79,17 +79,30 @@ body {
 /* Secciones */
 section {
   background-color: var(--card-bg);
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
+  padding: 30px; /* Aumentar el padding de las secciones */
+  margin-bottom: 25px; /* Aumentar el espacio entre secciones */
+  border-radius: 12px; /* Bordes más suaves */
 }
 
 h1, h2, h3 {
   margin: 0.5em 0;
 }
 
+h1 {
+  font-size: 2.5rem; /* Tamaño de texto del nombre */
+}
+
 h2 {
+  font-size: 1.8rem; /* Tamaño de texto del título */
   color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.5rem; /* Tamaño de texto */
+}
+
+p {
+  font-size: 1.2rem; /* Tamaño de párrafos */
 }
 
 ul {
@@ -123,13 +136,13 @@ footer {
   position: fixed;
   top: 15px;
   right: 15px;
-  padding: 10px 15px;
+  padding: 15px 20px; /* Aumentar tamaño del padding del botón */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background-color: var(--button-bg);
   color: var(--button-text);
-  font-size: 1rem;
+  font-size: 1.2rem; /* Aumentar el tamaño del texto del botón */
   transition: background 0.3s ease;
   z-index: 1000;
 }
@@ -137,3 +150,4 @@ footer {
 #theme-toggle:hover {
   background-color: var(--primary-color);
 }
+
