@@ -35,6 +35,9 @@ header h1, header h2 {
 }
 
 #theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -43,11 +46,13 @@ header h1, header h2 {
     color: var(--button-text);
     font-size: 1rem;
     transition: background 0.3s ease;
+    z-index: 1000;
 }
 
 #theme-toggle:hover {
     background-color: var(--primary-color);
 }
+
 
 .container {
     max-width: 900px;
