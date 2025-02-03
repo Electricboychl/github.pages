@@ -3,83 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>José Manuel Rojas Jaramillo</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #333; /* Gris oscuro */
-            color: #eee; /* Gris claro */
+            background-color: #1e1e1e;
+            color: #ddd;
         }
         header {
-            background-color: #111; /* Gris muy oscuro */
-            color: #eee; /* Gris claro */
+            background-color: #111;
             padding: 20px;
             text-align: center;
         }
-        h1 {
-            margin-top: 0;
+        header h1, header h2 {
+            margin: 5px 0;
         }
-        section {
-            padding: 20px;
-            background-color: #222; /* Gris un poco más claro */
-        }
-        footer {
-            background-color: #111; /* Gris muy oscuro */
-            color: #eee; /* Gris claro */
-            padding: 10px;
-            text-align: center;
-        }
-        a {
-            color: #888; /* Gris intermedio para enlaces */
-            text-decoration: none;
-        }
-        a:hover {
-            color: #eee; /* Gris claro al pasar el cursor */
-        }
-        /* Estilos adicionales para hacerlo más atractivo */
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
-        img {
-            max-width: 200px;
-            float: left;
-            margin-right: 20px;
+        section {
+            background-color: #222;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #4db8ff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "✔ ";
+            color: #4db8ff;
+        }
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+        }
+        a {
+            color: #4db8ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            border-radius: 50%;
+            border: 3px solid #4db8ff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>¡Hola! Soy [Tu Nombre]</h1>
-            <h2>[Tu Profesión o Pasatiempo]</h2>
-        </header>
+    <header>
+        <h1>José Manuel Rojas Jaramillo</h1>
+        <h2>Ingeniero Civil Eléctrico | Magíster en Conversión de Energía</h2>
+    </header>
 
+    <div class="container">
         <section>
             <h2>Sobre mí</h2>
-            <img src="https://www.pinterest.com/saratacuris/para-fotos-de-perfil/" alt="Tu foto"> <p>¡Bienvenido a mi página personal! Soy [Tu Nombre], [Tu Profesión o Pasatiempo]. Me apasiona [Tus Intereses].</p>
+            <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
+            <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y desarrollo de algoritmos para detección de fallas. Tengo experiencia en análisis de calidad y continuidad del suministro eléctrico, diseño de convertidores de potencia y análisis de datos con Python.</p>
         </section>
 
         <section>
-            <h2>Mis Habilidades</h2>
+            <h2>Educación</h2>
             <ul>
-                <li>[Habilidad 1]</li>
-                <li>[Habilidad 2]</li>
-                <li>[Habilidad 3]</li>
+                <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
+                <li>Ingeniería Civil Eléctrica - Universidad de Talca (2018-2024)</li>
             </ul>
         </section>
 
         <section>
-            <h2>Contacto</h2>
-            <p>Puedes contactarme en <a href="mailto:[Tu Correo Electrónico]">[Tu Correo Electrónico]</a>.</p>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>MATLAB / Simulink / PLECS / Digsilent / PSCAD</li>
+                <li>Python / SQL / C / C++ / JavaScript / PHP</li>
+                <li>Diseño de convertidores de potencia</li>
+                <li>Simulación de sistemas eléctricos</li>
+                <li>Microcontroladores Texas Instruments</li>
+            </ul>
         </section>
 
-        <footer>
-            <p>&copy; 2023 [Tu Nombre]</p>
-        </footer>
+        <section>
+            <h2>Experiencia</h2>
+            <p><strong>Práctica profesional - Transelec S.A. (Feb 2023 - Mar 2023)</strong></p>
+            <p>Apoyo en la planificación y supervisión de mantenimiento correctivo y preventivo en líneas de alta tensión.</p>
+        </section>
+
+        <section>
+            <h2>Contacto</h2>
+            <p>Email: <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
+            <p>Teléfono: +56989447418</p>
+            <p>Ubicación: Santiago - Talca, Chile</p>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
+    </footer>
 </body>
 </html>
+
