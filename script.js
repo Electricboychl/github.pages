@@ -22,4 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Factor para el efecto parallax
     document.querySelector('.container').style.transform = `translateY(${scrollPos * 0.1}px)`;
   });
+
+  // Intentar reproducir el audio (si el navegador lo permite)
+  const music = document.getElementById("background-music");
+  // En algunos navegadores puede ser necesario iniciar la reproducción tras una interacción del usuario.
+  if (music) {
+    music.volume = 0.5; // Ajusta el volumen si lo deseas (0.0 a 1.0)
+    const playPromise = music.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        // Si la reproducción automática es bloqueada, puedes mostrar un mensaje o un botón para iniciar la reproducción
+        console.log("La reproducción automática fue bloqueada:", error);
+      });
+    }
+  }
 });
