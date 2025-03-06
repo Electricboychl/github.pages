@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Empresa de Servicios Eléctricos</h1>
+        <div class="logo"> <img src="logo.png" alt="Logo Empresa"> </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -22,56 +22,58 @@
         </nav>
     </header>
 
-    <section id="inicio">
-        <h2>Bienvenidos</h2>
-        <p>Más de 10 años de experiencia en el sector de servicios eléctricos y electromecánicos.</p>
+    <section id="inicio" class="hero">
+        <div class="overlay">
+            <h1>Soluciones Eléctricas y Electromecánicas</h1>
+            <p>Más de 10 años de experiencia ofreciendo servicios de calidad.</p>
+            <a href="#contacto" class="btn">Contáctanos</a>
+        </div>
     </section>
 
     <section id="quienes-somos">
         <h2>Quiénes Somos</h2>
-        <p>La empresa nace en 2001 en Talca, inicialmente como un profesional prestador de servicios eléctricos...</p>
+        <p>Somos una empresa con más de 10 años en el sector de servicios eléctricos y electromecánicos...</p>
     </section>
 
     <section id="servicios">
-        <h2>Servicios</h2>
-        <ul>
-            <li>Instalaciones eléctricas</li>
-            <li>Mantenimiento industrial</li>
-            <li>Soluciones electromecánicas</li>
-            <li>Ingeniería eléctrica</li>
-        </ul>
+        <h2>Nuestros Servicios</h2>
+        <div class="grid">
+            <div class="servicio">
+                <h3>Instalaciones Eléctricas</h3>
+                <p>Proyectos eléctricos de alta y baja tensión.</p>
+            </div>
+            <div class="servicio">
+                <h3>Mantenimiento Industrial</h3>
+                <p>Soluciones para garantizar la continuidad operacional.</p>
+            </div>
+            <div class="servicio">
+                <h3>Soluciones Electromecánicas</h3>
+                <p>Desarrollo e integración de sistemas.</p>
+            </div>
+        </div>
     </section>
 
     <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Hemos ejecutado grandes proyectos como la Normalización del Aeródromo de Panguilemo y la instalación eléctrica en clínicas y escuelas.</p>
+        <h2>Proyectos Destacados</h2>
+        <p>Hemos trabajado en obras como la Normalización del Aeródromo de Panguilemo, instalaciones eléctricas en clínicas, y más.</p>
     </section>
 
     <section id="clientes">
         <h2>Clientes</h2>
-        <p>Hemos trabajado con clientes como Paris S.A., Bitumix S.A., Constructora Ecsson S.A., entre otros.</p>
+        <p>Empresas como Paris S.A., Bitumix S.A., y Constructora Ecsson S.A. han confiado en nosotros.</p>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Email: <a href="mailto:jrquinteros1@hotmail.com">jrquinteros1@hotmail.com</a></p>
-        <p>Teléfono: <a href="tel:087887488">087887488</a></p>
+        <p>Email: <a href="mailto:contacto@empresa.com">contacto@empresa.com</a></p>
+        <p>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></p>
         <form id="contact-form">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-            
+            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+            <input type="email" id="email" name="email" placeholder="Tu Correo" required>
+            <textarea id="mensaje" name="mensaje" placeholder="Tu Mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
 </body>
 </html>
 
-  <script src="script.js"></script>
-</body>
-</html>
