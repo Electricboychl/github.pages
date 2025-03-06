@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>José Manuel Rojas Jaramillo</title>
-  <!-- Font Awesome para los íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa de Servicios Eléctricos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Audio de fondo -->
-  <audio id="background-music" src="music.mp3" autoplay loop></audio>
+    <header>
+        <h1>Empresa de Servicios Eléctricos</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Botón para cambiar de tema -->
-  <button id="theme-toggle">🌜 Modo Oscuro</button>
-
-  <!-- Menú de navegación fijo en la parte superior -->
-  <div class="container">
-    <!-- Sección de Perfil -->
-    <div class="profile animar">
-      <img class="profile-img" src="profile.jpg" alt="José Manuel Rojas Jaramillo">
-      <h1>José Manuel Rojas Jaramillo</h1>
-      <h2>Ingeniero Civil Eléctrico</h2>
-      <h3>Magíster en Conversión de Energía</h3>
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:josemanuelrojaschl@gmail.com">josemanuelrojaschl@gmail.com</a></p>
-      <p><i class="fa-solid fa-phone"></i> +56989447418</p>
-      <p><i class="fa-brands fa-location-dot"></i> Santiago - Talca, Chile</p>
-      <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/joserojaschl" target="_blank">linkedin.com/in/joserojaschl</a></p>
-    </div>
-
-    <!-- Sección "Sobre mí" y Educación -->
-    <section id="sobre-mi" class="animar">
-      <h2>Sobre mí</h2>
-      <p>Soy Ingeniero Civil Eléctrico en proceso de término del Magíster en Ciencias de la Ingeniería, con mención en Conversión de Energía. Me especializo en la integración de inversores a la red y en el desarrollo de algoritmos para la detección de fallas.</p>
+    <section id="inicio">
+        <h2>Bienvenidos</h2>
+        <p>Más de 10 años de experiencia en el sector de servicios eléctricos y electromecánicos.</p>
     </section>
 
-    <section id="educacion" class="animar">
-      <h2>Educación</h2>
-      <ul>
-        <li>Magíster en Ciencias de la Ingeniería, mención Conversión de Energía - Universidad de Talca (2023-2024)</li>
-        <li>Ingeniería Civil Eléctrica - Universidad de Talca (2018-2024)</li>
-      </ul>
+    <section id="quienes-somos">
+        <h2>Quiénes Somos</h2>
+        <p>La empresa nace en 2001 en Talca, inicialmente como un profesional prestador de servicios eléctricos...</p>
     </section>
 
-    <!-- Nueva Sección: Logros Académicos -->
-    <section id="logros-academicos" class="animar">
-      <h2>Logros Académicos</h2>
-      <p>Aquí puedes listar premios, reconocimientos y otros hitos relevantes en el ámbito académico.</p>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <ul>
+            <li>Instalaciones eléctricas</li>
+            <li>Mantenimiento industrial</li>
+            <li>Soluciones electromecánicas</li>
+            <li>Ingeniería eléctrica</li>
+        </ul>
     </section>
 
-    <!-- Nueva Sección: Trabajos Realizados -->
-    <section id="trabajos-realizados" class="animar">
-      <h2>Trabajos Realizados</h2>
-      <p>Aquí puedes detallar proyectos, experiencia laboral y desarrollos destacados en tu carrera.</p>
+    <section id="proyectos">
+        <h2>Proyectos</h2>
+        <p>Hemos ejecutado grandes proyectos como la Normalización del Aeródromo de Panguilemo y la instalación eléctrica en clínicas y escuelas.</p>
     </section>
 
-    <!-- Nueva Sección: Voluntariados -->
-    <section id="voluntariados" class="animar">
-      <h2>Voluntariados</h2>
-      <p>Aquí puedes incluir las experiencias de voluntariado en las que has participado.</p>
+    <section id="clientes">
+        <h2>Clientes</h2>
+        <p>Hemos trabajado con clientes como Paris S.A., Bitumix S.A., Constructora Ecsson S.A., entre otros.</p>
     </section>
 
-    <!-- Nueva Sección: Contactos de Referencia -->
-    <section id="contactos-referencia" class="animar">
-      <h2>Contactos de Referencia</h2>
-      <p>Aquí puedes agregar nombres, cargos y datos de contacto de personas que puedan recomendarte.</p>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:jrquinteros1@hotmail.com">jrquinteros1@hotmail.com</a></p>
+        <p>Teléfono: <a href="tel:087887488">087887488</a></p>
+        <form id="contact-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
     </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 José Manuel Rojas Jaramillo</p>
-  </footer>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
