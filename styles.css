@@ -1,6 +1,8 @@
 /* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -8,57 +10,125 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #2b5876, #4e4376);
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
 }
 
-section {
-    padding: 20px;
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.hero {
+    background: url('background.jpg') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffd700;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #ffcc00;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.servicio {
     background: white;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
 }
 
 #contact-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 400px;
+    margin: auto;
 }
 
 #contact-form input, #contact-form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 #contact-form button {
-    background-color: #333;
+    background: #2b5876;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s;
 }
 
 #contact-form button:hover {
-    background-color: #555;
+    background: #4e4376;
 }
 
