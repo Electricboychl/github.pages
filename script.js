@@ -1,4 +1,3 @@
-/* script.js */
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("contact-form");
     
@@ -57,8 +56,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-
-#contact-form button:hover {
-    background: linear-gradient(135deg, #4e4376, #2b5876);
-}
