@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa de Servicios Eléctricos</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Manuel Rojas Jaramillo | Ingeniero Civil Eléctrico</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo"> <img src="logo.png" alt="Logo Empresa"> </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>José Manuel Rojas Jaramillo</h1>
+    <p>Ingeniero Civil Eléctrico | SEC Clase A | Apasionado por las ERNC y la innovación tecnológica</p>
+  </header>
 
-    <section id="inicio" class="hero">
-        <video autoplay muted loop>
-            <source src="video.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de video.
-        </video>
-        <div class="overlay">
-            <h1>Soluciones Eléctricas y Electromecánicas</h1>
-            <p>Más de 10 años de experiencia ofreciendo servicios de calidad.</p>
-            <a href="#contacto" class="btn">Contáctanos</a>
-        </div>
-    </section>
+  <nav>
+    <ul>
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
-    <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
-        <p>Somos una empresa con más de 10 años en el sector de servicios eléctricos y electromecánicos...</p>
-    </section>
+  <section id="perfil">
+    <h2>Perfil Profesional</h2>
+    <p>Ingeniero Civil Eléctrico con experiencia en diseño, ejecución y supervisión de proyectos eléctricos bajo normativa RIC y SEC. Experiencia investigativa en convertidores eléctricos, electrónica de potencia y modelado de redes AC. Manejo de software como AutoCAD, PVSyst, ETAP, Digsilent y Matlab. Interés por la innovación, la investigación aplicada y el desarrollo de proyectos con impacto en la transición energética.</p>
+  </section>
 
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="grid">
-            <div class="servicio">
-                <h3>Instalaciones Eléctricas</h3>
-                <p>Proyectos eléctricos de alta y baja tensión.</p>
-            </div>
-            <div class="servicio">
-                <h3>Mantenimiento Industrial</h3>
-                <p>Soluciones para garantizar la continuidad operacional.</p>
-            </div>
-            <div class="servicio">
-                <h3>Soluciones Electromecánicas</h3>
-                <p>Desarrollo e integración de sistemas.</p>
-            </div>
-        </div>
-    </section>
+  <section id="experiencia">
+    <h2>Experiencia Laboral</h2>
+    <ul>
+      <li><strong>Instalador Eléctrico SEC Clase A (Independiente)</strong> – Diseño, documentación y supervisión de proyectos eléctricos residenciales e industriales.</li>
+      <li><strong>LICEM - Universidad de Talca</strong> – Apoyo en investigación sobre inversores formadores de red, simulaciones y publicación de resultados.</li>
+      <li><strong>Profesor Corresponsable</strong> – Apoyo docente en áreas de electrónica de potencia, redes AC y electromecánica.</li>
+      <li><strong>Práctica Profesional en Transelec</strong> – Departamento de Líneas AT, mantenimiento preventivo, inspección y termografía.</li>
+    </ul>
+  </section>
 
-    <section id="proyectos">
-        <h2>Proyectos Destacados</h2>
-        <p>Hemos trabajado en obras como la Normalización del Aeródromo de Panguilemo, instalaciones eléctricas en clínicas, y más.</p>
-    </section>
+  <section id="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <ul>
+      <li><strong>Tesis:</strong> Inversor Multinivel en Cascada como Formador de Red – Análisis de estabilidad y control droop.</li>
+      <li><strong>Identificación de velocidad por sensores de aceleración:</strong> Aplicación con machine learning y comunicación inalámbrica.</li>
+      <li><strong>Generador de Van der Graff:</strong> Proyecto de divulgación científica financiado por la universidad.</li>
+    </ul>
+  </section>
 
-    <section id="clientes">
-        <h2>Clientes</h2>
-        <p>Empresas como Paris S.A., Bitumix S.A., y Constructora Ecsson S.A. han confiado en nosotros.</p>
-    </section>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Correo:</strong> josemanuelrojaschl@gmail.com</p>
+    <p><strong>Teléfono:</strong> +56 9 89447418</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tuusuario" target="_blank">/in/tuusuario</a></p>
+  </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailto:contacto@empresa.com">contacto@empresa.com</a></p>
-        <p>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></p>
-        <form id="contact-form">
-            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
-            <input type="email" id="email" name="email" placeholder="Tu Correo" required>
-            <textarea id="mensaje" name="mensaje" placeholder="Tu Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+  <footer>
+    <p>&copy; 2025 José Manuel Rojas Jaramillo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
