@@ -539,18 +539,9 @@
             margin-bottom: 1.5rem;
             transition: color 0.5s ease-in-out;
         }
-        .coupon-code-box {
-            background-color: var(--coupon-code-bg);
-            color: var(--coupon-code-text);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            border: 2px dashed var(--coupon-border); /* Dashed border for coupon effect */
-            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out;
-        }
+        /* Removed coupon-code-box styles as it's no longer present */
+        /* .coupon-code-box { ... } */
+
         .coupon-message {
             font-style: italic;
             color: var(--text-color);
@@ -572,7 +563,7 @@
             border: none;
             transition: all 0.3s ease-in-out;
         }
-        .coupon-buttons .print-button {
+        .coupon-buttons .print-button { /* Renamed to .send-ig-button in JS, but keeping for CSS consistency */
             background-color: var(--coupon-button-bg);
             color: white;
         }
@@ -725,7 +716,7 @@
             Quería preguntarte algo importante...
         </p>
         <p class="text-xl font-semibold text-pink-700">
-            ¿Te gustaría salir conmigo a tomar un café o un helado pronto?
+            ¿Te gustaría tener una cita conmigo?
         </p>
 
         <div class="button-group">
@@ -829,15 +820,14 @@
         <div class="coupon-modal-content">
             <h2 class="coupon-header">¡Tu Cupón de Salida!</h2>
             <p class="coupon-details" id="couponPromotionName"></p>
-            <div class="coupon-code-box">
-                Código: <span id="couponCode"></span>
-            </div>
+            <!-- Removed the coupon code display -->
             <p class="coupon-message" id="couponMessageText">
                 ¡Presenta este cupón para canjear tu increíble salida!
                 Te contactaré para coordinar los detalles. ¡Nos vemos pronto! 😉
             </p>
             <div class="coupon-buttons">
-                <button class="print-button" id="printCouponButton">Imprimir Cupón</button>
+                <!-- Changed button text and removed print functionality -->
+                <button class="send-ig-button" id="sendIgButton">Escríbeme la palabra promoción 1, 2, 3 o 4 y coordinemos</button>
                 <button class="close-button" id="closeCouponButton">Cerrar</button>
             </div>
         </div>
@@ -865,8 +855,8 @@
             // Coupon Modal Elements
             const couponModalOverlay = document.getElementById('couponModalOverlay');
             const couponPromotionName = document.getElementById('couponPromotionName');
-            const couponCode = document.getElementById('couponCode');
-            const printCouponButton = document.getElementById('printCouponButton');
+            // const couponCode = document.getElementById('couponCode'); // Removed as per request
+            const sendIgButton = document.getElementById('sendIgButton'); // Changed from printCouponButton
             const closeCouponButton = document.getElementById('closeCouponButton');
             const couponMessageText = document.getElementById('couponMessageText'); // Get the coupon message element
 
@@ -894,14 +884,14 @@
             }, 500); // Small delay for a smoother appearance
 
             yesButton.addEventListener('click', () => {
-                responseMessage.textContent = '¡Qué alegría! ¡Me haces muy feliz! 😊'; // Removed "Te enviaré un mensaje para coordinar los detalles"
+                responseMessage.textContent = '¡Qué alegría! ¡Me haces muy feliz! 😊';
                 responseMessage.classList.add('show');
                 yesButton.disabled = true;
                 noButton.disabled = true;
                 yesButton.classList.add('opacity-50', 'cursor-not-allowed');
                 noButton.classList.add('opacity-50', 'cursor-not-allowed');
                 // Reset noButton position if it moved
-                noButton.style.position = 'relative'; // Reset to relative
+                noButton.style.position = 'relative';
                 noButton.style.left = 'auto';
                 noButton.style.top = 'auto';
                 noButton.style.transform = 'none';
@@ -1003,7 +993,7 @@
                 }
             });
 
-            // Function to generate a random coupon code
+            // Function to generate a random coupon code - No longer used for specific codes
             function generateCouponCode() {
                 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
                 let code = '';
@@ -1022,36 +1012,55 @@
                     card.classList.add('selected');
 
                     const promotionName = card.querySelector('p').textContent;
-                    let couponCodeValue = ''; // Initialize coupon code
-                    let couponMessage = "Mandame el código con la cita a IG y coordinemos la fecha"; // New default message
+                    // No longer initializing couponCodeValue here as it's not displayed
+                    let couponMessage = "Escríbeme la palabra promoción 1, 2, 3 o 4 y coordinemos"; // Updated message
 
-                    // Assign specific coupon codes based on promotion name
+                    // Assign specific coupon codes based on promotion name (for internal use/reference if needed)
+                    let internalCouponCode = '';
                     if (promotionName.includes('Promoción 1')) {
-                        couponCodeValue = 'Cafecito'; // Updated code
+                        internalCouponCode = 'Cafecito';
                     } else if (promotionName.includes('Promoción 2')) {
-                        couponCodeValue = 'Caelanocheenlaurbe'; // Updated code
+                        internalCouponCode = 'Caelanocheenlaurbe';
                     } else if (promotionName.includes('Promoción 3')) {
-                        couponCodeValue = 'Almuerzito'; // Updated code
+                        internalCouponCode = 'Almuerzito';
                     } else if (promotionName.includes('Quiero elegir yo otra cosa')) {
-                        couponCodeValue = 'Mandamujer'; // Updated code
+                        internalCouponCode = 'Mandamujer';
                     } else {
-                        couponCodeValue = generateCouponCode(); // Fallback generic code
+                        internalCouponCode = generateCouponCode(); // Fallback
                     }
 
                     couponPromotionName.textContent = promotionName;
-                    couponCode.textContent = couponCodeValue;
+                    // couponCode.textContent = internalCouponCode; // Removed coupon code display
                     couponMessageText.textContent = couponMessage; // Set the custom message
                     couponModalOverlay.classList.add('show');
                 });
             });
 
-            // Handle print coupon button click - Removed print functionality
-            printCouponButton.addEventListener('click', () => {
-                // Instead of printing, we can just close the modal or show a confirmation
-                couponModalOverlay.classList.remove('show');
-                promotionCards.forEach(c => c.classList.remove('selected'));
-                // You could add a temporary message here like: "¡Código copiado! Ahora envíalo por IG."
+            // Handle "Send code to IG" button click (formerly print button)
+            sendIgButton.addEventListener('click', () => {
+                // The message is now fixed, no need to get codeToSend
+                const messageToDisplay = sendIgButton.textContent; // Get the full message from the button itself
+                
+                // Example: Copy to clipboard (or just display a message)
+                navigator.clipboard.writeText(messageToDisplay)
+                    .then(() => {
+                        responseMessage.textContent = `¡Mensaje copiado! 😉`;
+                        responseMessage.classList.add('show');
+                        couponModalOverlay.classList.remove('show');
+                        promotionCards.forEach(c => c.classList.remove('selected'));
+                    })
+                    .catch(err => {
+                        console.error('Error al copiar el mensaje: ', err);
+                        responseMessage.textContent = 'No se pudo copiar el mensaje automáticamente. Por favor, cópialo manualmente. 😉';
+                        responseMessage.classList.add('show');
+                        couponModalOverlay.classList.remove('show');
+                        promotionCards.forEach(c => c.classList.remove('selected'));
+                    });
             });
+
+            // Update the text of the button (was printCouponButton)
+            // This is now done directly in the HTML for sendIgButton
+            // printCouponButton.textContent = "Enviar código a IG"; // This line is no longer needed
 
             // Handle close coupon button click
             closeCouponButton.addEventListener('click', () => {
@@ -1069,7 +1078,11 @@
             });
 
             // Spotify Floating Window Logic
-            // Removed openSpotifyButton listener as it's now automatic
+            // Show Spotify floating window on page load
+            setTimeout(() => {
+                spotifyFloatingWindow.classList.add('show');
+            }, 500); // Small delay for a smoother appearance
+
             closeSpotifyButton.addEventListener('click', () => {
                 spotifyFloatingWindow.classList.remove('show');
             });
