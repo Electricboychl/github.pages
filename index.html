@@ -1,77 +1,1079 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>José Manuel Rojas Jaramillo | Ingeniero Civil Eléctrico</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Antonia Grandón</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for 'Inter' and 'Dancing Script' (lettering style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Light/Dark Mode */
+        :root {
+            --bg-gradient-start: #fbcfe8; /* Soft pink */
+            --bg-gradient-end: #f0abfc;   /* Light purple */
+            --container-bg: rgba(255, 255, 255, 0.9);
+            --heading-color: #be185d;     /* Deep pink */
+            --text-color: #4a4a4a;        /* Dark gray */
+            --yes-button-bg: #ec4899;     /* Pink */
+            --yes-button-hover-bg: #db2777; /* Darker pink */
+            --no-button-bg: #fca5a5;      /* Light red */
+            --no-button-text: #7f1d1d;    /* Dark red text */
+            --no-button-hover-bg: #f87171; /* Darker light red */
+            --message-color: #be185d;
+            --flower-color: #fbcfe8;
+            --place-card-bg: #ffe4e6; /* Very light pink */
+            --place-card-text: #4a4a4a;
+            --footer-color: #7a7a7a;
+            --theme-button-bg: #ec4899;
+            --theme-button-hover-bg: #db2777;
+            --icon-color: #be185d; /* Default icon color */
+
+            /* Coupon specific colors */
+            --coupon-bg: #ffffff;
+            --coupon-border: #ec4899;
+            --coupon-text: #be185d;
+            --coupon-code-bg: #fbcfe8;
+            --coupon-code-text: #be185d;
+            --coupon-button-bg: #ec4899;
+            --coupon-button-hover-bg: #db2777;
+
+            /* Spotify Floating Window colors */
+            --spotify-window-bg: rgba(255, 255, 255, 0.95);
+            --spotify-window-border: #ec4899;
+            --spotify-close-button-bg: #fca5a5;
+            --spotify-close-button-hover-bg: #f87171;
+        }
+
+        body.dark-mode {
+            --bg-gradient-start: #2d0b2e; /* Darker purple */
+            --bg-gradient-end: #4a0f4b;   /* Even darker purple */
+            --container-bg: rgba(0, 0, 0, 0.7); /* Darker transparent */
+            --heading-color: #f0abfc;     /* Lighter purple for contrast */
+            --text-color: #e0e0e0;        /* Light gray text */
+            --yes-button-bg: #a78bfa;     /* Lighter purple */
+            --yes-button-hover-bg: #8b5cf6; /* Even lighter purple */
+            --no-button-bg: #6b7280;      /* Gray */
+            --no-button-text: #e0e0e0;    /* Light gray text */
+            --no-button-hover-bg: #4b5563; /* Darker gray */
+            --message-color: #f0abfc;
+            --flower-color: #8b5cf6;      /* Purple flowers */
+            --place-card-bg: #374151;     /* Dark gray */
+            --place-card-text: #e0e0e0;
+            --footer-color: #b0b0b0;
+            --theme-button-bg: #8b5cf6;
+            --theme-button-hover-bg: #6d28d9;
+            --icon-color: #f0abfc; /* Dark mode icon color */
+
+            /* Coupon specific colors for dark mode */
+            --coupon-bg: #1f2937; /* Dark gray */
+            --coupon-border: #a78bfa; /* Lighter purple */
+            --coupon-text: #f0abfc; /* Lighter purple */
+            --coupon-code-bg: #4b5563; /* Darker gray */
+            --coupon-code-text: #e0e0e0;
+            --coupon-button-bg: #a78bfa;
+            --coupon-button-hover-bg: #8b5cf6;
+
+            /* Spotify Floating Window colors for dark mode */
+            --spotify-window-bg: rgba(31, 41, 55, 0.95); /* Darker gray */
+            --spotify-window-border: #a78bfa;
+            --spotify-close-button-bg: #6b7280;
+            --spotify-close-button-hover-bg: #4b5563;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Hide overflow for flower animations and floating elements */
+            color: var(--text-color); /* Apply text color from variable */
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition for theme change */
+            position: relative; /* Needed for absolute positioning of the "No" button if it moves outside container */
+        }
+        .container {
+            background-color: var(--container-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            max-width: 90%;
+            width: 600px; /* Slightly wider to accommodate gallery */
+            position: relative; /* Crucial for positioning the 'no' button relative to it */
+            z-index: 10;
+            transition: transform 0.3s ease-in-out, background-color 0.5s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive; /* Apply lettering font */
+            color: var(--heading-color);
+            font-size: 7.5rem; /* Made even larger as requested */
+            margin-bottom: 1.5rem;
+            transition: color 0.5s ease-in-out;
+            line-height: 0.9; /* Adjust line height for large text to make it appear "longer" */
+            letter-spacing: -2px; /* Slight negative letter spacing for a more connected look */
+        }
+        h2 {
+            color: var(--heading-color); /* Apply heading color to gallery title */
+            transition: color 0.5s ease-in-out;
+        }
+        p {
+            color: var(--text-color);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            transition: color 0.5s ease-in-out;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            position: relative; /* Needed for positioning the "No" button if it's within this group */
+            height: 60px; /* Give it a fixed height to prevent layout shift when "No" button moves */
+        }
+        button {
+            padding: 0.8rem 2rem;
+            border-radius: 9999px; /* Pill shape */
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border: none;
+            box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15), 0 3px 6px -1px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+        }
+        button.yes-button {
+            background-color: var(--yes-button-bg);
+            color: white;
+            background-image: linear-gradient(to right, var(--yes-button-bg), var(--yes-button-hover-bg)); /* Subtle gradient */
+            z-index: 1; /* Ensure yes button is above no button if they overlap */
+        }
+        button.yes-button:hover {
+            background-color: var(--yes-button-hover-bg);
+            transform: translateY(-4px) scale(1.06); /* More pronounced hover */
+            box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.2), 0 6px 10px -2px rgba(0, 0, 0, 0.1); /* Even stronger shadow on hover */
+        }
+        button.no-button {
+            background-color: var(--no-button-bg);
+            color: var(--no-button-text);
+            background-image: linear-gradient(to right, var(--no-button-bg), var(--no-button-hover-bg)); /* Subtle gradient */
+            transition: all 0.2s ease-out; /* Smooth transition for movement */
+            position: relative; /* Start as relative to be in flow, then switch to absolute */
+            z-index: 0; /* Below yes button initially */
+        }
+        button.no-button:hover {
+            background-color: var(--no-button-hover-bg);
+            transform: translateY(-4px) scale(1.06); /* More pronounced hover */
+            box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.2), 0 6px 10px -2px rgba(0, 0, 0, 0.1); /* Even stronger shadow on hover */
+        }
+        .message {
+            margin-top: 2.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--message-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out, color 0.5s ease-in-out;
+        }
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .flower {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: var(--flower-color);
+            border-radius: 50%;
+            opacity: 0; /* Initially hidden for bloom effect */
+            transform: scale(0); /* Initially scaled down for bloom effect */
+            z-index: 5;
+            transition: background-color 0.5s ease-in-out; /* Smooth transition for flower color */
+        }
+        .flower::before, .flower::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: var(--flower-color);
+            border-radius: 50%;
+        }
+        .flower::before {
+            top: -30px;
+            left: 0;
+        }
+        .flower::after {
+            top: 0;
+            left: -30px;
+        }
+
+        /* Flower positions and delays */
+        .flower:nth-child(1) { top: 10%; left: 5%; animation-delay: 0.1s; transform: scale(0.8); }
+        .flower:nth-child(2) { top: 30%; left: 90%; animation-delay: 0.3s; transform: scale(1.1); }
+        .flower:nth-child(3) { top: 70%; left: 15%; animation-delay: 0.5s; transform: scale(0.9); }
+        .flower:nth-child(4) { top: 50%; left: 70%; animation-delay: 0.7s; transform: scale(1.2); }
+        .flower:nth-child(5) { top: 85%; left: 40%; animation-delay: 0.9s; transform: scale(0.7); }
+        .flower:nth-child(6) { top: 20%; left: 45%; animation-delay: 1.1s; transform: scale(1.0); }
+        .flower:nth-child(7) { top: 60%; left: 5%; animation-delay: 1.3s; transform: scale(0.85); }
+        .flower:nth-child(8) { top: 40%; left: 25%; animation-delay: 1.5s; transform: scale(1.15); }
+        .flower:nth-child(9) { top: 5%; left: 60%; animation-delay: 1.7s; transform: scale(0.95); }
+        .flower:nth-child(10) { top: 75%; left: 80%; animation-delay: 1.9s; transform: scale(1.0); }
+
+        /* Bloom animation */
+        @keyframes bloom {
+            0% { opacity: 0; transform: scale(0) rotate(0deg); }
+            100% { opacity: 0.8; transform: scale(var(--initial-scale, 1)) rotate(0deg); } /* Use initial scale from nth-child */
+        }
+
+        /* Float animation (continues after bloom) */
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* Apply bloom and then float */
+        .flower.animate-bloom {
+            animation: bloom 2s forwards ease-out, float 10s infinite ease-in-out 2s; /* Bloom then float */
+        }
+
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--footer-color);
+            transition: color 0.5s ease-in-out;
+        }
+
+        /* Promotions specific styles */
+        .promotions-section {
+            margin-top: 2.5rem; /* Ensure space from buttons */
+            opacity: 0; /* Initially hidden */
+            max-height: 0; /* Initially hidden */
+            overflow: hidden; /* Hide overflow */
+            transition: opacity 0.5s ease-in-out, max-height 0.7s ease-in-out; /* Smooth transition for appearance */
+        }
+
+        .promotions-section.show {
+            opacity: 1;
+            max-height: 500px; /* Adjust based on content height */
+        }
+
+        .promotions-gallery-container {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent items from wrapping */
+            padding-bottom: 1rem; /* Space for scrollbar */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--yes-button-bg) var(--place-card-bg); /* Firefox */
+        }
+
+        /* Custom scrollbar for Webkit browsers */
+        .promotions-gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .promotions-gallery-container::-webkit-scrollbar-track {
+            background: var(--place-card-bg);
+            border-radius: 10px;
+        }
+        .promotions-gallery-container::-webkit-scrollbar-thumb {
+            background-color: var(--yes-button-bg);
+            border-radius: 10px;
+            border: 2px solid var(--place-card-bg);
+        }
+
+        .promotions-gallery-row {
+            display: flex; /* Use flexbox for horizontal layout */
+            gap: 1rem; /* Space between cards */
+            justify-content: center; /* Center items if there's space */
+        }
+
+        .promotion-card {
+            flex-shrink: 0; /* Prevent cards from shrinking */
+            width: 200px; /* Fixed width for each card */
+            background-color: var(--place-card-bg);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.3s ease-in-out;
+            cursor: pointer; /* Make it look clickable */
+            border: 2px solid transparent; /* For selection highlight */
+            display: flex; /* Use flex for content alignment */
+            flex-direction: column; /* Stack icon and text */
+            align-items: center; /* Center content horizontally */
+            justify-content: space-between; /* Space out icon and text */
+            min-height: 200px; /* Increased height to accommodate "Seleccióname" */
+        }
+        .promotion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; /* Apply shake animation */
+            backface-visibility: hidden; /* Fix for flickering in some browsers */
+            perspective: 1000px; /* Fix for flickering in some browsers */
+        }
+        .promotion-card.selected {
+            border-color: var(--yes-button-bg); /* Highlight selected card */
+            box-shadow: 0 0 0 4px var(--yes-button-bg); /* Stronger highlight */
+        }
+
+        .promotion-card .icon-container {
+            width: 80px; /* Size of the icon area */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0.5rem; /* Space between icon and text */
+            margin-top: 0.5rem;
+        }
+        .promotion-card .icon-container svg {
+            width: 100%;
+            height: 100%;
+            color: var(--icon-color); /* Icon color from variable */
+            transition: color 0.5s ease-in-out;
+        }
+
+        .promotion-card .select-text {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .promotion-card p {
+            font-size: 0.85rem; /* Adjusted font size to fit better */
+            line-height: 1.3; /* Adjust line height for better text wrapping */
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem; /* Add some bottom margin */
+            color: var(--place-card-text);
+            transition: color 0.5s ease-in-out;
+            white-space: normal; /* Allow text to wrap within the card */
+            flex-grow: 1; /* Allow paragraph to take available space */
+            display: flex;
+            align-items: center; /* Center text vertically if it's short */
+            justify-content: center;
+            text-align: center;
+            padding: 0 0.25rem; /* Small horizontal padding for text */
+        }
+
+        /* Shake animation for promotion cards */
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        /* Date Essentials Section */
+        .date-essentials-section {
+            background-color: var(--place-card-bg); /* Use a similar background as cards */
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, opacity 0.5s ease-in-out, max-height 0.7s ease-in-out;
+            opacity: 0; /* Initially hidden */
+            max-height: 0; /* Initially hidden */
+            overflow: hidden; /* Hide overflow */
+        }
+        .date-essentials-section.show {
+            opacity: 1;
+            max-height: 300px; /* Adjust based on content height */
+        }
+
+        .date-essentials-section h2 {
+            font-family: 'Inter', sans-serif; /* Use Inter for this heading */
+            font-size: 1.75rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            transition: color 0.5s ease-in-out;
+        }
+        .date-essentials-section ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+            color: var(--text-color);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            transition: color 0.5s ease-in-out;
+        }
+        .date-essentials-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .date-essentials-section .romantic-phrase {
+            font-style: italic;
+            font-weight: bold;
+            color: var(--yes-button-bg); /* Highlight romantic phrase */
+            transition: color 0.5s ease-in-out;
+        }
+        body.dark-mode .date-essentials-section .romantic-phrase {
+            color: var(--yes-button-bg); /* Keep light purple for dark mode */
+        }
+        .date-essentials-section .payment-note {
+            margin-top: 1.5rem;
+            font-weight: bold;
+            color: var(--heading-color); /* Highlight payment note */
+            transition: color 0.5s ease-in-out;
+        }
+
+
+        /* Spotify Floating Window */
+        .spotify-floating-window {
+            position: fixed;
+            bottom: 20px; /* Position from bottom */
+            right: 20px; /* Position from right */
+            width: 300px; /* Fixed width for the window */
+            background-color: var(--spotify-window-bg);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            z-index: 900; /* Below modal, above other content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; /* Start hidden */
+            visibility: hidden; /* Start hidden */
+            transform: translateY(20px) scale(0.95); /* Start slightly off-screen and smaller */
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.5s ease-in-out;
+            border: 2px solid var(--spotify-window-border);
+        }
+        .spotify-floating-window.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .spotify-floating-window h3 {
+            color: var(--heading-color);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .spotify-floating-window iframe {
+            width: 100%;
+            height: 80px; /* Compact height for floating player */
+            border-radius: 8px;
+            border: none;
+        }
+        .spotify-floating-window .spotify-close-button {
+            background-color: var(--spotify-close-button-bg);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .spotify-floating-window .spotify-close-button:hover {
+            background-color: var(--spotify-close-button-hover-bg);
+            transform: translateY(-1px);
+        }
+
+        /* Button to open Spotify player - Removed as per request */
+        /* #openSpotifyButton { ... } */
+
+
+        /* Theme Toggle Button */
+        #themeToggleButton {
+            background-color: var(--theme-button-bg);
+            transition: background-color 0.5s ease-in-out;
+        }
+        #themeToggleButton:hover {
+            background-color: var(--theme-button-hover-bg);
+        }
+
+        /* Coupon Modal Styles */
+        .coupon-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Above everything else */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .coupon-modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .coupon-modal-content {
+            background-color: var(--coupon-bg);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out, background-color 0.5s ease-in-out;
+        }
+        .coupon-modal-overlay.show .coupon-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .coupon-header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--coupon-text);
+            margin-bottom: 1rem;
+            transition: color 0.5s ease-in-out;
+        }
+        .coupon-details {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            transition: color 0.5s ease-in-out;
+        }
+        .coupon-code-box {
+            background-color: var(--coupon-code-bg);
+            color: var(--coupon-code-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            border: 2px dashed var(--coupon-border); /* Dashed border for coupon effect */
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+        }
+        .coupon-message {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.5s ease-in-out;
+        }
+        .coupon-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .coupon-buttons button {
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .coupon-buttons .print-button {
+            background-color: var(--coupon-button-bg);
+            color: white;
+        }
+        .coupon-buttons .print-button:hover {
+            background-color: var(--coupon-button-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15);
+        }
+        .coupon-buttons .close-button {
+            background-color: #e5e7eb; /* Light gray */
+            color: #4a4a4a;
+        }
+        body.dark-mode .coupon-buttons .close-button {
+            background-color: #4b5563; /* Darker gray */
+            color: #e0e0e0;
+        }
+        .coupon-buttons .close-button:hover {
+            background-color: #d1d5db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body > *:not(.coupon-modal-overlay) { /* Hide everything except the coupon modal */
+                display: none !important;
+            }
+            .coupon-modal-overlay {
+                position: static; /* Reset positioning for print */
+                display: block;
+                background: none; /* No background overlay in print */
+                width: auto;
+                height: auto;
+                overflow: visible;
+            }
+            .coupon-modal-content {
+                width: 100%;
+                max-width: 100%;
+                box-shadow: none;
+                transform: none;
+                opacity: 1;
+                border: 2px dashed var(--coupon-border); /* Ensure border is visible */
+                padding: 1rem; /* Adjust padding for print */
+            }
+            .coupon-buttons {
+                display: none; /* Hide buttons in print */
+            }
+            .coupon-message {
+                margin-top: 1rem; /* Adjust margin for print */
+            }
+            /* Ensure text colors are readable in print */
+            .coupon-header, .coupon-code-box, .coupon-details, .coupon-message {
+                color: black !important; /* Force black text for readability */
+                -webkit-print-color-adjust: exact; /* For background colors */
+                print-color-adjust: exact;
+            }
+            .coupon-code-box {
+                background-color: #f0f0f0 !important; /* Lighter background for code in print */
+            }
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 3.5rem; /* Adjust font size for smaller screens */
+            }
+            p {
+                font-size: 1rem;
+            }
+            .button-group {
+                flex-direction: column;
+                gap: 1rem;
+                height: auto; /* Allow height to adjust for stacked buttons */
+            }
+            button {
+                width: 100%;
+            }
+            /* Gallery on small screens will naturally scroll */
+            .promotion-card {
+                width: 180px; /* Adjust card width for smaller screens */
+            }
+            /* Reset no-button position for small screens if it became absolute */
+            button.no-button.moved {
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+                transform: none !important;
+                margin-left: 0 !important;
+                margin-top: 0 !important;
+            }
+            .spotify-floating-window {
+                width: 90%;
+                bottom: 10px;
+                right: 5%;
+                left: 5%;
+            }
+            .spotify-floating-window iframe {
+                height: 80px; /* Adjust height for smaller screens */
+            }
+            .coupon-modal-content {
+                padding: 1.5rem;
+            }
+            .coupon-header {
+                font-size: 2rem;
+            }
+            .coupon-details, .coupon-code-box, .coupon-message {
+                font-size: 0.9rem;
+            }
+            .coupon-buttons button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-overlay">
-      <h1>José Manuel Rojas Jaramillo</h1>
-      <p>Ingeniero Civil Eléctrico | SEC Clase A | Energías Renovables & Electrónica de Potencia</p>
+    <!-- Floating flowers background -->
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggleButton" class="fixed top-4 right-4 p-3 rounded-full text-white shadow-lg transition-all duration-300 hover:scale-105 z-20">
+        <!-- Sun Icon (default for light mode) -->
+        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.325 3.325l-.707.707M6.364 6.364l-.707-.707m12.728 0l-.707.707M6.364 17.636l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon Icon (for dark mode) - hidden by default -->
+        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+    </button>
+
+    <div class="container">
+        <h1>¡Hola Antito!</h1> <!-- Changed heading text and size -->
+        <p>
+            Espero que esta pequeña sorpresa te encuentre bien.
+            Quería preguntarte algo importante...
+        </p>
+        <p class="text-xl font-semibold text-pink-700">
+            ¿Te gustaría salir conmigo a tomar un café o un helado pronto?
+        </p>
+
+        <div class="button-group">
+            <button class="yes-button" id="yesButton">¡Sí, me encantaría!</button>
+            <button class="no-button" id="noButton">Quizás en otro momento</button>
+        </div>
+
+        <div class="message" id="responseMessage"></div>
+
+        <!-- Promotions Section -->
+        <div class="promotions-section mt-8" id="promotionsSection">
+            <h2 class="text-2xl font-bold mb-4">Algunas ideas para nuestra salida:</h2>
+            <div class="promotions-gallery-container">
+                <div class="promotions-gallery-row">
+                    <div class="promotion-card" data-promotion-id="promo1">
+                        <div class="icon-container">
+                            <!-- Coffee Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coffee">
+                                <path d="M10 2v6h3a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H3a2 2 0 0 1 2-2V4a2 2 0 0 1 2-2h7Z"/>
+                                <path d="M22 6H17a3 3 0 0 0 0 6h5"/>
+                                <path d="M6 18H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2Z"/>
+                            </svg>
+                        </div>
+                        <p class="select-text">Seleccióname</p>
+                        <p class="font-medium">Promoción 1: Salida a un café más paseo al río</p>
+                    </div>
+                    <div class="promotion-card" data-promotion-id="promo2">
+                        <div class="icon-container">
+                            <!-- Disco Ball / Music Note Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-4">
+                                <path d="M9 18V5l12-2v13"/>
+                                <path d="M12 18v-4a2 2 0 0 1 2-2h3"/>
+                                <circle cx="7" cy="21" r="2"/>
+                                <circle cx="17" cy="19" r="2"/>
+                            </svg>
+                        </div>
+                        <p class="select-text">Seleccióname</p>
+                        <p class="font-medium">Promoción 2: Salida a tomarnos algo en la noche en Talca más disco</p>
+                    </div>
+                    <div class="promotion-card" data-promotion-id="promo3">
+                        <div class="icon-container">
+                            <!-- Fork and Knife Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils">
+                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                                <path d="M7 2v20"/>
+                                <path d="M21 15v-7a2 2 0 0 0-2-2H11v11a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1"/>
+                            </svg>
+                        </div>
+                        <p class="select-text">Seleccióname</p>
+                        <p class="font-medium">Promoción 3: Almuerzo en la tarde</p>
+                    </div>
+                    <div class="promotion-card" data-promotion-id="promo4">
+                        <div class="icon-container">
+                            <!-- Lightbulb / Idea Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb">
+                                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 3c0 1.3.5 2.6 1.5 3.5.8.7 1.3 1.5 1.5 2.5"/>
+                                <path d="M9 18h6"/>
+                                <path d="M10 22h4"/>
+                                <path d="M12 14v8"/>
+                            </svg>
+                        </div>
+                        <p class="select-text">Seleccióname</p>
+                        <p class="font-medium">Quiero elegir yo otra cosa para la salida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Essentials Section -->
+        <div class="date-essentials-section" id="dateEssentialsSection">
+            <h2 class="text-center">¿Qué tienes que llevar para nuestra cita?</h2>
+            <ul>
+                <li>✨ **Tú** (¡obviamente, eres lo principal!).</li>
+                <li>👗 **Ropa con la que te sientas cómoda y linda**, para que disfrutes al máximo.</li>
+                <li>💖 Y... **tu sonrisa más bonita**.</li>
+            </ul>
+            <p class="payment-note">
+                No te preocupes por nada más, el resto corre por mi cuenta...
+                ¡será mi forma de invitarte a una experiencia inolvidable! 😉
+            </p>
+        </div>
+
+        <footer>
+            Con cariño,
+            <br>
+            José Manuel
+        </footer>
     </div>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="#perfil">Perfil</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+    <!-- Spotify Floating Window -->
+    <div id="spotifyFloatingWindow" class="spotify-floating-window">
+        <h3>Tu Canción Especial</h3>
+        <!-- Added &autoplay=1 to the Spotify embed URL -->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3vSPVPDu7P0mJEhSwCO7Bx?utm_source=generator&autoplay=1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <button class="spotify-close-button" id="closeSpotifyButton">Cerrar Música</button>
+    </div>
 
-  <main>
-    <section id="perfil" class="section-colored">
-      <h2>Perfil Profesional</h2>
-      <p>Soy Ingeniero Civil Eléctrico con experiencia en diseño, ejecución y supervisión de proyectos eléctricos bajo normativa RIC y SEC. He participado en investigaciones sobre convertidores emergentes y formadores de red. Manejo avanzado de herramientas como AutoCAD, ETAP, Digsilent, Matlab, PVSyst, y me motiva el desarrollo de soluciones para la transición energética.</p>
-    </section>
 
-    <section id="experiencia">
-      <h2>Experiencia Laboral</h2>
-      <div class="card">
-        <h3>Instalador Eléctrico SEC Clase A (Independiente)</h3>
-        <p>Diseño y supervisión de proyectos eléctricos residenciales e industriales bajo normativa RIC/SEC.</p>
-      </div>
-      <div class="card">
-        <h3>LICEM - Universidad de Talca</h3>
-        <p>Investigación en inversores multinivel como formadores de red, simulaciones y elaboración de publicaciones.</p>
-      </div>
-      <div class="card">
-        <h3>Profesor Corresponsable</h3>
-        <p>Apoyo docente en Electrotecnia, Electrónica de Potencia, Redes AC y Laboratorios.</p>
-      </div>
-      <div class="card">
-        <h3>Transelec – Práctica Profesional</h3>
-        <p>Supervisión de mantenimiento en líneas AT, inspecciones en subestaciones, análisis termográfico.</p>
-      </div>
-    </section>
+    <!-- Coupon Modal Overlay -->
+    <div id="couponModalOverlay" class="coupon-modal-overlay">
+        <div class="coupon-modal-content">
+            <h2 class="coupon-header">¡Tu Cupón de Salida!</h2>
+            <p class="coupon-details" id="couponPromotionName"></p>
+            <div class="coupon-code-box">
+                Código: <span id="couponCode"></span>
+            </div>
+            <p class="coupon-message" id="couponMessageText">
+                ¡Presenta este cupón para canjear tu increíble salida!
+                Te contactaré para coordinar los detalles. ¡Nos vemos pronto! 😉
+            </p>
+            <div class="coupon-buttons">
+                <button class="print-button" id="printCouponButton">Imprimir Cupón</button>
+                <button class="close-button" id="closeCouponButton">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
-    <section id="proyectos" class="section-colored-alt">
-      <h2>Proyectos Destacados</h2>
-      <ul>
-        <li><strong>Tesis:</strong> Inversor Multinivel en Cascada como Formador de Red – Control droop y análisis de estabilidad.</li>
-        <li><strong>Velocidad con sensores de aceleración:</strong> Plataforma con ML y comunicación inalámbrica.</li>
-        <li><strong>Generador de Van der Graff:</strong> Proyecto de divulgación científica financiado por fondos estudiantiles.</li>
-      </ul>
-    </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p><strong>Correo:</strong> josemanuelrojaschl@gmail.com</p>
-      <p><strong>Teléfono:</strong> +56 9 89447418</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tuusuario" target="_blank">/in/tuusuario</a></p>
-    </section>
-  </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const responseMessage = document.getElementById('responseMessage');
+            const promotionsSection = document.getElementById('promotionsSection'); // Get the promotions section
+            const dateEssentialsSection = document.getElementById('dateEssentialsSection'); // Get the date essentials section
+            const flowers = document.querySelectorAll('.flower');
+            const themeToggleButton = document.getElementById('themeToggleButton');
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            const container = document.querySelector('.container'); // Get the container element
+            const promotionCards = document.querySelectorAll('.promotion-card'); // Get all promotion cards
 
-  <footer>
-    <p>&copy; 2025 José Manuel Rojas Jaramillo. Todos los derechos reservados.</p>
-  </footer>
+            // Spotify Floating Window Elements
+            const spotifyFloatingWindow = document.getElementById('spotifyFloatingWindow');
+            const closeSpotifyButton = document.getElementById('closeSpotifyButton');
 
-  <script src="script.js"></script>
+            // Coupon Modal Elements
+            const couponModalOverlay = document.getElementById('couponModalOverlay');
+            const couponPromotionName = document.getElementById('couponPromotionName');
+            const couponCode = document.getElementById('couponCode');
+            const printCouponButton = document.getElementById('printCouponButton');
+            const closeCouponButton = document.getElementById('closeCouponButton');
+            const couponMessageText = document.getElementById('couponMessageText'); // Get the coupon message element
+
+            // Set initial scale for flowers based on their nth-child rules
+            flowers.forEach((flower, index) => {
+                const style = window.getComputedStyle(flower);
+                const transform = style.getPropertyValue('transform');
+                let scale = 1;
+                if (transform && transform.includes('scale(')) {
+                    scale = parseFloat(transform.match(/scale\(([^)]+)\)/)[1]);
+                }
+                flower.style.setProperty('--initial-scale', scale);
+            });
+
+            // Trigger bloom animation for flowers after a short delay
+            setTimeout(() => {
+                flowers.forEach(flower => {
+                    flower.classList.add('animate-bloom');
+                });
+            }, 100); // Small delay to ensure CSS is rendered
+
+            // Show Spotify floating window on page load
+            setTimeout(() => {
+                spotifyFloatingWindow.classList.add('show');
+            }, 500); // Small delay for a smoother appearance
+
+            yesButton.addEventListener('click', () => {
+                responseMessage.textContent = '¡Qué alegría! ¡Me haces muy feliz! 😊'; // Removed "Te enviaré un mensaje para coordinar los detalles"
+                responseMessage.classList.add('show');
+                yesButton.disabled = true;
+                noButton.disabled = true;
+                yesButton.classList.add('opacity-50', 'cursor-not-allowed');
+                noButton.classList.add('opacity-50', 'cursor-not-allowed');
+                // Reset noButton position if it moved
+                noButton.style.position = 'relative'; // Reset to relative
+                noButton.style.left = 'auto';
+                noButton.style.top = 'auto';
+                noButton.style.transform = 'none';
+                noButton.classList.remove('moved'); // Remove the class that enables absolute positioning
+
+                // Show the promotions section and date essentials section
+                promotionsSection.classList.add('show');
+                dateEssentialsSection.classList.add('show');
+            });
+
+            // Make the "No" button run away
+            noButton.addEventListener('mouseover', () => {
+                // Only make it run if it's not disabled yet
+                if (!noButton.disabled) {
+                    const buttonRect = noButton.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect(); // Use container for movement area
+
+                    let newX, newY;
+                    let attempts = 0;
+                    const maxAttempts = 50; // Prevent infinite loop if no space is found
+
+                    do {
+                        // Generate random positions within the container's bounds
+                        // newX should be relative to the container's left edge
+                        newX = Math.random() * (containerRect.width - buttonRect.width);
+                        // newY should be relative to the container's top edge
+                        newY = Math.random() * (containerRect.height - buttonRect.height);
+
+                        attempts++;
+                        if (attempts > maxAttempts) {
+                            // If too many attempts, just pick a random spot and break
+                            break;
+                        }
+
+                        // Check if the new position overlaps significantly with the "Yes" button
+                        // This check needs to be relative to the container's coordinate system
+                        const yesButtonRect = yesButton.getBoundingClientRect();
+                        const yesButtonRelativeLeft = yesButtonRect.left - containerRect.left;
+                        const yesButtonRelativeTop = yesButtonRect.top - containerRect.top;
+
+                        const overlapThreshold = 0.8; // Percentage of overlap to avoid
+                        const isOverlappingX = (newX < (yesButtonRelativeLeft + yesButtonRect.width * overlapThreshold) && (newX + buttonRect.width) > (yesButtonRelativeLeft * overlapThreshold));
+                        const isOverlappingY = (newY < (yesButtonRelativeTop + yesButtonRect.height * overlapThreshold) && (newY + buttonRect.height) > (yesButtonRelativeTop * overlapThreshold));
+
+                        // If it overlaps, try again
+                        if (isOverlappingX && isOverlappingY) {
+                            continue;
+                        }
+
+                        // Ensure it moves a minimum distance from its current position within the container
+                        const minMoveDistance = 50; // pixels
+                        const currentRelativeX = buttonRect.left - containerRect.left;
+                        const currentRelativeY = buttonRect.top - containerRect.top;
+                        const distance = Math.sqrt(Math.pow(newX - currentRelativeX, 2) + Math.pow(newY - currentRelativeY, 2));
+
+                        if (distance < minMoveDistance) {
+                            continue; // Too close to current position, try again
+                        }
+
+                    } while (false); // Loop only once for simplicity, or add more complex collision detection
+
+                    // Set position to absolute relative to the container
+                    noButton.style.position = 'absolute';
+                    noButton.style.left = `${newX}px`;
+                    noButton.style.top = `${newY}px`;
+                    noButton.classList.add('moved'); // Add a class to indicate it's moved
+
+                    // Ensure it stays above other content if it moves out of its original container
+                    noButton.style.zIndex = '100';
+                }
+            });
+
+            noButton.addEventListener('click', () => {
+                responseMessage.textContent = 'Oh, entiendo. No te preocupes, quizás en otra ocasión. ¡Gracias por considerarlo! 😔';
+                responseMessage.classList.add('show');
+                yesButton.disabled = true;
+                noButton.disabled = true;
+                yesButton.classList.add('opacity-50', 'cursor-not-allowed');
+                noButton.classList.add('opacity-50', 'cursor-not-allowed');
+                // Reset noButton position
+                noButton.style.position = 'relative';
+                noButton.style.left = 'auto';
+                noButton.style.top = 'auto';
+                noButton.style.transform = 'none';
+                noButton.classList.remove('moved');
+            });
+
+            // Theme Toggle Logic
+            themeToggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                // Toggle icon visibility
+                if (isDarkMode) {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                } else {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                }
+            });
+
+            // Function to generate a random coupon code
+            function generateCouponCode() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                let code = '';
+                for (let i = 0; i < 8; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return code;
+            }
+
+            // Handle click on promotion cards
+            promotionCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Remove selected class from all cards first
+                    promotionCards.forEach(c => c.classList.remove('selected'));
+                    // Add selected class to the clicked card
+                    card.classList.add('selected');
+
+                    const promotionName = card.querySelector('p').textContent;
+                    let couponCodeValue = ''; // Initialize coupon code
+                    let couponMessage = "Mandame el código con la cita a IG y coordinemos la fecha"; // New default message
+
+                    // Assign specific coupon codes based on promotion name
+                    if (promotionName.includes('Promoción 1')) {
+                        couponCodeValue = 'Cafecito'; // Updated code
+                    } else if (promotionName.includes('Promoción 2')) {
+                        couponCodeValue = 'Caelanocheenlaurbe'; // Updated code
+                    } else if (promotionName.includes('Promoción 3')) {
+                        couponCodeValue = 'Almuerzito'; // Updated code
+                    } else if (promotionName.includes('Quiero elegir yo otra cosa')) {
+                        couponCodeValue = 'Mandamujer'; // Updated code
+                    } else {
+                        couponCodeValue = generateCouponCode(); // Fallback generic code
+                    }
+
+                    couponPromotionName.textContent = promotionName;
+                    couponCode.textContent = couponCodeValue;
+                    couponMessageText.textContent = couponMessage; // Set the custom message
+                    couponModalOverlay.classList.add('show');
+                });
+            });
+
+            // Handle print coupon button click - Removed print functionality
+            printCouponButton.addEventListener('click', () => {
+                // Instead of printing, we can just close the modal or show a confirmation
+                couponModalOverlay.classList.remove('show');
+                promotionCards.forEach(c => c.classList.remove('selected'));
+                // You could add a temporary message here like: "¡Código copiado! Ahora envíalo por IG."
+            });
+
+            // Handle close coupon button click
+            closeCouponButton.addEventListener('click', () => {
+                couponModalOverlay.classList.remove('show');
+                // Deselect any selected promotion card
+                promotionCards.forEach(c => c.classList.remove('selected'));
+            });
+
+            // Close modal if clicking outside content
+            couponModalOverlay.addEventListener('click', (event) => {
+                if (event.target === couponModalOverlay) {
+                    couponModalOverlay.classList.remove('show');
+                    promotionCards.forEach(c => c.classList.remove('selected'));
+                }
+            });
+
+            // Spotify Floating Window Logic
+            // Removed openSpotifyButton listener as it's now automatic
+            closeSpotifyButton.addEventListener('click', () => {
+                spotifyFloatingWindow.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
