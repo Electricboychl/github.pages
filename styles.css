@@ -1,117 +1,382 @@
-/* Fuentes y Reset */
-body {
-  font-family: 'Raleway', 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f7fa;
-  color: #1d1d1f;
+Conversation with Gemini
+Necesito tu apoyo.
+
+
+
+Necesito crear una pagina web donde le deje claro a mi pareja que ella es la unica en mi vida.
+
+
+
+Lo que pasa es que le dí like a una foto de una pagina de tattoos de una examiga, por que ella tiene miedo de que mi examiga busque algo más. Pero yo sólo tengo ojos para mi amor María.
+
+
+
+Ayudame con la estrucutra
+
+Entiendo perfectamente la situación. Quieres hacer un gran gesto para darle seguridad a María y dejarle claro que ese "like" fue un simple clic sin importancia, y que ella es tu prioridad absoluta. Es una idea muy creativa y romántica.
+
+Sin embargo, te recuerdo amablemente que, aunque una página web es un detalle hermoso, el mejor complemento para esto siempre será una charla sincera en persona donde valides sus miedos sin ponerte a la defensiva.
+
+Aquí tienes una estructura clara, amorosa y directa para la página web que le dejará claro que ella es la única en tu vida.
+
+Estructura de la Página Web: "Solo Ojos para María"
+1. Sección de Inicio (Hero Section)
+Esta es la primera impresión. Debe ser impactante, cálida y directa al grano.
+
+Título Principal (H1): "Para María: La única dueña de mi corazón." o "Por si alguna vez lo dudas..."
+
+Subtítulo: "No hay nadie más, nunca hubo nadie más, y nunca habrá nadie más."
+
+Imagen de Fondo: La mejor foto que tengan juntos, donde ambos se vean genuinamente felices.
+
+Llamado a la Acción (Botón): "Descubre por qué" o "Lee mi promesa".
+
+2. Sección de Aclaración (El Elefante en la Habitación)
+Aquí debes abordar el malentendido con empatía, sin sonar a excusa, sino como una reafirmación de tus límites.
+
+Título: "Sobre lo que pasó..."
+
+Texto: Un párrafo corto y honesto. Ejemplo: "Sé que un simple 'like' en una foto de tatuajes te hizo sentir insegura. Quiero pedirte perdón por haberte hecho sentir así. Para mí fue solo una imagen sin contexto, pero entiendo tu miedo. Quiero que sepas que esa persona es parte del pasado y no tiene ningún espacio en mi presente. Mi presente y mi futuro tienen nombre y apellido, y eres tú."
+
+3. Sección de Celebración (Por qué solo María)
+Cambia el enfoque del problema hacia lo maravillosa que es ella y su relación.
+
+Título: "Por qué mis ojos son solo para ti"
+
+Formato Visual: Una galería de 3 a 6 fotos de ustedes, o una pequeña lista con iconos.
+
+Puntos a destacar:
+
+Tu sonrisa: "Cómo iluminas mis días."
+
+Nuestra conexión: "Nadie me entiende como tú."
+
+Lo que construimos: "El equipo que formamos juntos."
+
+4. Sección de Compromiso (Tus Promesas)
+Dale la seguridad que necesita sobre el futuro.
+
+Título: "Mis Promesas para Ti"
+
+Lista de viñetas:
+
+"Prometo cuidar tus sentimientos y darte la seguridad que mereces."
+
+"Prometo que siempre serás mi prioridad."
+
+"Prometo proteger nuestra relación de cualquier cosa o persona del pasado."
+
+5. Pie de Página (Carta Final)
+Un cierre íntimo y personal.
+
+Título: "Te amo, María."
+
+Texto: Una carta breve y muy tuya. Firma con tu nombre o el apodo cariñoso que ella usa para ti.
+
+Detalle Extra: Puedes agregar una canción de fondo que sea "su canción" para que suene mientras lee esta parte.
+
+¿Tienes alguna paleta de colores o estilo en mente, o te gustaría que te ayude a redactar el texto específico de la carta final?
+
+Le gusta los corazones celestes, podriamos mezclarlo con un fondo de nubes ene escala de celestes
+
+¡Me parece una idea hermosa! El color celeste en la psicología del color transmite muchísima paz, confianza, lealtad y sinceridad. Es exactamente la vibra que necesitas para calmar cualquier inseguridad y demostrarle que tu amor por ella es como un cielo despejado.
+
+Aquí te explico cómo podemos integrar esa paleta de "cielo y corazones celestes" en la estructura de la página para que se vea moderna, romántica y nada saturada.
+
+La Paleta de Colores y Estilo Visual
+Fondo Principal (El Cielo): Un degradado que vaya de un celeste pastel muy suave en la parte superior a un blanco o celeste casi transparente en la parte inferior.
+
+Las Nubes: En lugar de fotos realistas pesadas, puedes usar nubes en formato PNG o SVG (con transparencia) colocadas estratégicamente en los bordes de la pantalla o detrás de los textos.
+
+Los Textos: Para que la página sea fácil de leer sobre un fondo claro, usa un color azul marino oscuro (Navy) o gris carbón en lugar de negro puro. Esto mantiene la suavidad del diseño.
+
+Los Detalles: Usa el emoji del corazón celeste (🩵) como viñetas para tus listas o crea una animación de corazoncitos flotando sutilmente en el fondo.
+
+¿Cómo aplicarlo a las secciones?
+Sección de Inicio: El fondo de nubes celestes debe destacar aquí. El texto principal ("Para María...") puede ir en blanco con una ligera sombra azul para que resalte sobre el fondo.
+
+Sección de Aclaración y Promesas: Para que el texto largo se lea bien sin perder el fondo de nubes, puedes usar cajas de texto blancas con un poco de transparencia (un efecto conocido como Glassmorphism o cristal esmerilado). Así las nubes y los corazones celestes seguirán viéndose de fondo sin estorbar la lectura.
+
+Un regalo para empezar (Código base)
+Si estás armando esto tú mismo con HTML y CSS, aquí tienes un pequeño fragmento de código que crea un fondo de cielo celeste con una animación sencilla de corazones celestes (🩵) flotando hacia arriba. Puedes copiarlo, guardarlo como un archivo .html y abrirlo en tu navegador para ver el efecto:
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solo Ojos para María</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        /* Fondo degradado celeste */
+        background: linear-gradient(180deg, #a1c4fd 0%, #c2e9fb 100%);
+        height: 100vh;
+        font-family: 'Arial', sans-serif;
+        overflow: hidden; /* Evita que la pantalla se mueva por los corazones */
+        color: #1a365d; /* Azul oscuro para el texto */
+    }
+
+    .contenedor {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        padding-top: 20vh;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+    }
+
+    p {
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.6); /* Caja semitransparente */
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Animación de los corazones */
+    .corazon {
+        position: absolute;
+        bottom: -10%;
+        font-size: 24px;
+        animation: flotar 10s infinite ease-in;
+        opacity: 0.7;
+    }
+
+    @keyframes flotar {
+        0% { transform: translateY(0) scale(1); opacity: 0; }
+        10% { opacity: 0.8; }
+        100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Para María 🩵</h1>
+        <p>No hay nadie más, nunca hubo nadie más, y nunca habrá nadie más.</p>
+    </div>
+
+    <!-- Corazones flotantes -->
+    <div class="corazon" style="left: 10%; animation-duration: 8s;">🩵</div>
+    <div class="corazon" style="left: 30%; animation-duration: 12s; animation-delay: 2s;">🩵</div>
+    <div class="corazon" style="left: 50%; animation-duration: 9s; animation-delay: 1s;">🩵</div>
+    <div class="corazon" style="left: 70%; animation-duration: 15s; animation-delay: 3s;">🩵</div>
+    <div class="corazon" style="left: 90%; animation-duration: 11s; animation-delay: 0.5s;">🩵</div>
+
+</body>
+</html>
+Puedes tomar esta base estética y agregarle las secciones de texto que vimos antes, o usarla como inspiración si decides construir la página usando plataformas como Wix, Canva o WordPress.
+
+Entregame el:
+
+
+
+index.html
+
+script.js
+
+style.css
+
+Tus archivos de la página web están listos.
+
+Aquí tienes el archivo HTML:
+HTML icon
+solo_ojos_para_maria/index
+ HTML 
+Open
+
+Aquí tienes el archivo CSS:
+CSS icon
+solo_ojos_para_maria/style
+ CSS 
+Open
+
+Aquí tienes el archivo JS:
+JS icon
+solo_ojos_para_maria/script
+ JS 
+Open
+
+¿Cómo ver tu página web?
+Descarga los tres archivos.
+
+Guárdalos exactamente en la misma carpeta (por ejemplo, crea una carpeta en tu escritorio llamada "Web_Maria" y pon los tres ahí).
+
+Haz doble clic en el archivo index.html.
+
+¡El navegador se abrirá y podrás ver tu sorpresa completa, con los corazones celestes flotando y los paneles de "cristal" con tus mensajes!
+
+Si necesitas ajustar alguna frase o cambiar algún detalle antes de mostrársela, puedes abrir el archivo index.html con cualquier editor de texto (como el Bloc de Notas) y modificar el texto fácilmente. ¡Mucho éxito con este hermoso detalle!
+
+
+
+
+Your Orion Power chats aren’t used to improve our models. Gemini is AI and can make mistakes. Your privacy & GeminiOpens in a new window
+
+/* Importación de fuentes */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    /* Fondo que simula un cielo celeste claro y hermoso */
+    background: linear-gradient(180deg, #8bc6ec 0%, #d5eeff 100%);
+    background-attachment: fixed;
+    color: #1a365d;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(to right, #023e8a, #0077b6);
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
+/* Animación de los corazones */
+#heart-container {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    pointer-events: none; /* Para que los clics pasen a través de los corazones */
+    z-index: 0;
 }
 
-.hero-overlay {
-  text-align: center;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatup linear infinite;
+    opacity: 0.6;
+    filter: drop-shadow(0px 0px 5px rgba(255,255,255,0.8));
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin: 0;
+@keyframes floatup {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.8; }
+    100% { transform: translateY(-110vh) scale(1.5) rotate(25deg); opacity: 0; }
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-/* Navegación */
-nav {
-  background-color: #03045e;
-  padding: 0.8rem 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #90e0ef;
-}
-
-/* Secciones */
-main {
-  padding: 2rem 1rem;
-  max-width: 960px;
-  margin: auto;
-}
-
+/* Estilos de las secciones (Cristal esmerilado / Glassmorphism) */
 section {
-  margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-section h2 {
-  color: #023e8a;
-  font-size: 1.8rem;
-  border-bottom: 2px solid #00b4d8;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
+.glass-section {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    margin: 60px auto;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 50, 100, 0.08);
+    padding: 50px;
+    transition: transform 0.3s ease;
 }
 
-/* Estilos con fondo de color */
-.section-colored {
-  background: #e0f7fa;
-  padding: 2rem;
-  border-radius: 12px;
+.glass-section:hover {
+    transform: translateY(-5px);
 }
 
-.section-colored-alt {
-  background: #caf0f8;
-  padding: 2rem;
-  border-radius: 12px;
+/* Tipografía */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    color: #0c4a6e;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+    margin-top: 0;
 }
 
-/* Cards */
-.card {
-  background: white;
-  padding: 1.2rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #0284c7;
+    margin-bottom: 25px;
+    margin-top: 0;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 700px;
+    color: #334155;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  background-color: #0077b6;
-  color: white;
-  padding: 1rem;
-  font-size: 0.9rem;
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0369a1;
+}
+
+/* Listas (Por qué y Promesas) */
+ul {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+li {
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border-left: 5px solid #7dd3fc;
+}
+
+/* Botón */
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(2, 132, 199, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(2, 132, 199, 0.4);
+}
+
+/* Carta Final */
+.carta-texto {
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.firma {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #0284c7;
+    margin-top: 30px;
+}
+
+/* Diseño Responsivo para móviles */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    .glass-section { padding: 30px 20px; margin: 30px 15px; }
+    p { font-size: 1.1rem; }
 }
